@@ -1,1 +1,1 @@
-web: gunicorn forshat.wsgi
+web: gunicorn config.wsgi
