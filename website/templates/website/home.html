@@ -1,0 +1,362 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}الرئيسية - الفرشاة كلينك{% endblock %}
+
+{% block content %}
+<!-- Hero Cover Section -->
+<section class="hero-cover-section">
+    <div class="hero-background">
+        <img src="{% static 'img/websitecover.png' %}" alt="Forshaat Clinic Cover" class="hero-cover-image">
+        <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="hero-content">
+        <div class="container">
+            <h1 class="hero-title">نرسم الابتسامة على وجهك</h1>
+        </div>
+    </div>
+</section>
+
+<!-- Why Forshaat Section -->
+<section class="why-forshaat-section">
+    <div class="container">
+        <div class="why-content-wrapper">
+            <!-- Left Side: Text Content -->
+            <div class="why-text-content">
+                <h2 class="why-title">
+                    <span class="title-highlight">ليش الفرشاة كلينك؟</span>
+                </h2>
+                
+                <p class="why-description">
+                    نقدم رعاية صحية شاملة ومتخصصة في بيئة احترافية مع فريق طبي متميز وأحدث التقنيات لضمان راحتك وثقتك.
+                </p>
+
+                <ul class="why-benefits-list">
+                    <li class="benefit-item">
+                        <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>عيادة جلدية وليزر وتغذية وأسنان في مكان واحد</span>
+                    </li>
+                    <li class="benefit-item">
+                        <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>كشوفات مجانية في جميع الأقسام</span>
+                    </li>
+                    <li class="benefit-item">
+                        <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>أسنان 24/7 مع جاهزية طوارئ</span>
+                    </li>
+                    <li class="benefit-item">
+                        <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>أجهزة تشخيص وعلاج متقدّمة</span>
+                    </li>
+                    <li class="benefit-item">
+                        <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>فريق طبي متخصص ومتعدد الخبرات</span>
+                    </li>
+                    <li class="benefit-item">
+                        <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>خطط علاجية واضحة وتواصل مستمر مع المراجع</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Side: Images Grid -->
+            <div class="why-images-grid">
+                <div class="image-wrapper image-large">
+                    <img src="{% static 'img/img1.png' %}" alt="عيادة الأسنان" class="grid-image">
+                    <div class="image-badge">
+                        <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="white" fill-opacity="0.95"/>
+                            <path d="M50 30C38.95 30 30 38.95 30 50C30 61.05 38.95 70 50 70C61.05 70 70 61.05 70 50C70 38.95 61.05 30 50 30ZM45 55L40 50L41.41 48.59L45 52.17L58.59 38.58L60 40L45 55Z" fill="#00B4D8"/>
+                        </svg>
+                        <p>خدمات شاملة</p>
+                    </div>
+                </div>
+                <div class="image-wrapper image-small">
+                    <img src="{% static 'img/IMG2.png' %}" alt="رعاية الأطفال" class="grid-image">
+                </div>
+                <div class="image-wrapper image-small">
+                    <img src="{% static 'img/img3.png' %}" alt="فريق طبي متخصص" class="grid-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Doctors Section -->
+<section class="doctors-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">فريقنا الطبي</span>
+            <h2 class="section-title">
+                <span class="title-dark">أطباؤنا</span>
+                <span class="title-highlight">المتميزون</span>
+            </h2>
+            <p class="section-description">
+                نخبة من أفضل الأطباء والاستشاريين في مختلف التخصصات الطبية
+            </p>
+        </div>
+
+        <div class="doctors-carousel-container">
+            <!-- Navigation Buttons -->
+            <button class="carousel-nav carousel-nav-right" id="scrollRight" aria-label="التالي">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            
+            <button class="carousel-nav carousel-nav-left" id="scrollLeft" aria-label="السابق">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <!-- Doctors Carousel -->
+            <div class="doctors-carousel" id="doctorsCarousel">
+                <!-- Doctor 1: د. ياسر محب -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى نائب جراحة الوجه والفكين د ياسر محب.png' %}" 
+                             alt="د. ياسر محب" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. ياسر محب</h3>
+                        <p class="doctor-specialty">نائب جراحة الوجه والفكين</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 2: د. رؤى السيد -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى نائب الجلدية والتجميل د رؤى السيد.png' %}" 
+                             alt="د. رؤى السيد" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. رؤى السيد</h3>
+                        <p class="doctor-specialty">نائب الجلدية والتجميل</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 3: د. مهند الجهني -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى طبيب الاسنان د مهند الجهني.png' %}" 
+                             alt="د. مهند الجهني" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. مهند الجهني</h3>
+                        <p class="doctor-specialty">طبيب الأسنان</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 4: د. معتز خلف -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى طبيب الاسنان د معتز خلف.png' %}" 
+                             alt="د. معتز خلف" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. معتز خلف</h3>
+                        <p class="doctor-specialty">طبيب الأسنان</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 5: د. محمد هاني -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى طبيب الاسنان د محمد هاني.png' %}" 
+                             alt="د. محمد هاني" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. محمد هاني</h3>
+                        <p class="doctor-specialty">طبيب الأسنان</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 6: د. محمد الرفاعي -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى طبيب الاسنان د محمد الرفاعي.png' %}" 
+                             alt="د. محمد الرفاعي" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. محمد الرفاعي</h3>
+                        <p class="doctor-specialty">طبيب الأسنان</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 7: د. لينا عربي -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى طبيب الاسنان د لينا عربي.png' %}" 
+                             alt="د. لينا عربي" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. لينا عربي</h3>
+                        <p class="doctor-specialty">طبيبة الأسنان</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 8: د. سلمى عصام -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى طبيب الاسنان د سلمى عصام.png' %}" 
+                             alt="د. سلمى عصام" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. سلمى عصام</h3>
+                        <p class="doctor-specialty">طبيبة الأسنان</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 9: د. أحمد الشناوي -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى استشاري تقويم الاسنان د احمد الشناوي.png' %}" 
+                             alt="د. أحمد الشناوي" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. أحمد الشناوي</h3>
+                        <p class="doctor-specialty">استشاري تقويم الأسنان</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 10: د. آيه شلش -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى أخصائية الجلدية والتجميل د آيه شلش.png' %}" 
+                             alt="د. آيه شلش" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. آيه شلش</h3>
+                        <p class="doctor-specialty">أخصائية الجلدية والتجميل</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 11: د. منيرة محو -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى أخصائية التغذية العلاجية د منيرة محو.png' %}" 
+                             alt="د. منيرة محو" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. منيرة محو</h3>
+                        <p class="doctor-specialty">أخصائية التغذية العلاجية</p>
+                    </div>
+                </div>
+
+                <!-- Doctor 12: د. حنين قاري -->
+                <div class="doctor-card">
+                    <div class="doctor-image-wrapper">
+                        <img src="{% static 'img/الكشف لدى أخصائية التغذية العلاجية د حنين قاري.png' %}" 
+                             alt="د. حنين قاري" 
+                             class="doctor-image">
+                        <button class="doctor-info-btn" aria-label="معلومات الطبيب">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16v-4m0-4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">د. حنين قاري</h3>
+                        <p class="doctor-specialty">أخصائية التغذية العلاجية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
