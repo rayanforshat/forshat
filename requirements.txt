@@ -4,5 +4,5 @@ gunicorn==25.0.3
 packaging==26.0
 sqlparse==0.5.5
 whitenoise==6.11.0
-psycopg2-binary==2.9.10
+psycopg[binary]>=3.3.4
 dj-database-url==2.3.0

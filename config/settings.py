@@ -88,10 +88,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3'),
+    'default': dj_database_url.parse(
+        os.environ.get(
+            'DATABASE_URL',
+            # PUBLIC URL للتشغيل المحلي - INTERNAL URL على Railway تلقائياً
+            'postgresql://postgres:pXGNAcJjhWBfnDbpKUJTAicTRrJZDiLc@tramway.proxy.rlwy.net:57888/railway'
+        ),
         conn_max_age=600,
-        ssl_require=False,
     )
 }
 
