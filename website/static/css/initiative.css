@@ -41,6 +41,32 @@
     color: var(--primary-color);
 }
 
+.hero-title-highlight {
+    color: var(--primary-color);
+}
+
+.hadith-box {
+    margin: 28px auto 0;
+    max-width: 580px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(222, 190, 98, 0.35);
+    border-radius: 14px;
+    padding: 20px 28px;
+}
+
+.hadith-text {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.9;
+    margin-bottom: 8px;
+}
+
+.hadith-source {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+}
+
 /* ---- Info Cards ---- */
 .initiative-info {
     background: var(--bg-light);

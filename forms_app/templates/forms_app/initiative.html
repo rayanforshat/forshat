@@ -1,7 +1,7 @@
 {% extends 'website/base.html' %}
 {% load static %}
 
-{% block title %}مبادرة العلاج بدون مقابل مالي - الفرشاة كلينك{% endblock %}
+{% block title %}مبادرة عون - الفرشاة كلينك{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/initiative.css' %}">
@@ -13,11 +13,15 @@
 <section class="initiative-hero">
     <div class="container">
         <div class="hero-badge">🦷 مبادرة إنسانية</div>
-        <h1 class="hero-title">مبادرة العلاج بدون المقابل المالي</h1>
+        <h1 class="hero-title">مبادرة <span class="hero-title-highlight">عون</span></h1>
         <p class="hero-subtitle">
-            مبادرة أطلقها <strong>الدكتور مهند الجهني</strong>، تتم عن طريق كوكبة من أطباء الأسنان السعوديين
-            بهدف تقديم العلاج مجاناً لمن يحتاجون
+            لعلاج الغير قادرين على دفع رسوم العلاج، وتشمل إزالة الألم عبر
+            <strong>الجلسة الأولى من استئصال العصب</strong> و<strong>الخلع</strong>
         </p>
+        <div class="hadith-box">
+            <p class="hadith-text">« وَاللهُ فِي عَوْنِ الْعَبْدِ مَا كَانَ الْعَبْدُ فِي عَوْنِ أَخِيهِ »</p>
+            <p class="hadith-source">قال رسول الله ﷺ &nbsp;—&nbsp; رَوَاهُ مُسْلِمٌ [رقم: 2699]</p>
+        </div>
     </div>
 </section>
 
@@ -26,9 +30,9 @@
     <div class="container">
         <div class="info-grid">
             <div class="info-card">
-                <div class="info-icon">🏥</div>
-                <h3>خدماتنا</h3>
-                <p>خلع الأسنان، سحب العصب، والجراحة السنية</p>
+                <div class="info-icon">🦷</div>
+                <h3>الخدمات المتاحة</h3>
+                <p>الجلسة الأولى من استئصال العصب، وخلع الأسنان</p>
             </div>
             <div class="info-card">
                 <div class="info-icon">🤲</div>
@@ -129,8 +133,8 @@
                     </div>
                 </div>
 
-                <!-- Row 3: Nationality & City -->
-                <div class="form-row two-cols">
+                <!-- Row 3: Nationality -->
+                <div class="form-row one-col">
                     <div class="form-group">
                         <label for="{{ form.nationality.id_for_label }}" class="form-label">
                             {{ form.nationality.label }}
@@ -141,23 +145,12 @@
                             <span class="field-error">{{ form.nationality.errors.0 }}</span>
                         {% endif %}
                     </div>
-
-                    <div class="form-group">
-                        <label for="{{ form.city.id_for_label }}" class="form-label">
-                            {{ form.city.label }}
-                            <span class="required-star">*</span>
-                        </label>
-                        {{ form.city }}
-                        {% if form.city.errors %}
-                            <span class="field-error">{{ form.city.errors.0 }}</span>
-                        {% endif %}
-                    </div>
                 </div>
 
                 <!-- Row 4: Service Type -->
                 <div class="form-row one-col">
                     <div class="form-group">
-                        <label for="{{ form.service_type.id_for_label }}" class="form-label">
+                        <label class="form-label">
                             {{ form.service_type.label }}
                             <span class="required-star">*</span>
                         </label>
@@ -168,7 +161,7 @@
                                     <input type="radio" name="service_type" value="{{ value }}"
                                         {% if form.service_type.value == value %}checked{% endif %}>
                                     <span class="service-option-box">
-                                        {% if value == 'خلع' %}🦷{% elif value == 'سحب عصب' %}💉{% else %}🏥{% endif %}
+                                        {% if value == 'خلع' %}🦷{% else %}💉{% endif %}
                                         {{ label }}
                                     </span>
                                 </label>
@@ -231,7 +224,7 @@
         <button class="modal-close" onclick="closeModal('privacyModal')">✕</button>
         <h2 class="modal-title">🔒 سياسة الخصوصية</h2>
         <div class="modal-content">
-            <p>نحن في مبادرة العلاج بدون مقابل مالي نلتزم بحماية خصوصيتك وبياناتك الشخصية وفق الضوابط التالية:</p>
+            <p>نحن في مبادرة عون نلتزم بحماية خصوصيتك وبياناتك الشخصية وفق الضوابط التالية:</p>
             <ul>
                 <li>تُستخدم البيانات المُدخلة <strong>حصراً</strong> لأغراض المبادرة العلاجية</li>
                 <li>لن تُشارَك معلوماتك مع أي جهة تجارية خارجية</li>
@@ -247,16 +240,15 @@
 <div id="initiativeModal" class="modal-overlay" onclick="closeModalOutside(event, 'initiativeModal')">
     <div class="modal-box">
         <button class="modal-close" onclick="closeModal('initiativeModal')">✕</button>
-        <h2 class="modal-title">📋 سياسة المبادرة</h2>
+        <h2 class="modal-title">📋 سياسة مبادرة عون</h2>
         <div class="modal-content">
-            <p>مبادرة العلاج بدون المقابل المالي هي مبادرة إنسانية أسّسها <strong>الدكتور مهند الجهني</strong> وتتم بالشراكة مع نخبة من أطباء الأسنان السعوديين. فيما يلي شروط وأحكام الاستفادة من المبادرة:</p>
+            <p>مبادرة <strong>عون</strong> مبادرة إنسانية تهدف لعلاج الغير قادرين على دفع رسوم العلاج، وتتم بالشراكة مع نخبة من أطباء الأسنان السعوديين. فيما يلي شروط وأحكام الاستفادة:</p>
             <ul>
                 <li>المبادرة مخصصة لمن لا يملكون القدرة المالية للعلاج</li>
-                <li>الأولوية للحالات الأشد احتياجاً بناءً على التقييم الطبي</li>
-                <li>الخدمات المتاحة: الخلع، سحب العصب، والجراحة السنية فقط</li>
+                <li>الخدمات المتاحة: <strong>الجلسة الأولى من استئصال العصب</strong> و<strong>الخلع</strong> فقط</li>
+                <li>الأولوية للحالات الأشد ألماً واحتياجاً بناءً على التقييم الطبي</li>
                 <li>يتم التواصل مع المتقدمين المقبولين خلال 3 إلى 5 أيام عمل</li>
                 <li>يحق للمبادرة رفض الطلبات التي لا تستوفي شروط الاستحقاق</li>
-                <li>المبادرة لا تتحمل أي نفقات خارج نطاق الخدمات المحددة</li>
                 <li>يجب تقديم وثيقة إثبات هوية سارية عند الحضور للعلاج</li>
             </ul>
         </div>

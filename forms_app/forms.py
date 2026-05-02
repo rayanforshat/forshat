@@ -14,7 +14,7 @@ class TreatmentRequestForm(forms.ModelForm):
         model = TreatmentRequest
         fields = [
             'full_name', 'phone', 'id_number',
-            'birth_date', 'nationality', 'city',
+            'birth_date', 'nationality',
             'service_type', 'notes',
         ]
         widgets = {
@@ -39,10 +39,6 @@ class TreatmentRequestForm(forms.ModelForm):
                 'placeholder': 'مثال: سعودي، مصري ...',
                 'class': 'form-input',
             }),
-            'city': forms.TextInput(attrs={
-                'placeholder': 'مثال: الرياض، جدة ...',
-                'class': 'form-input',
-            }),
             'service_type': forms.Select(attrs={
                 'class': 'form-input form-select',
             }),
@@ -58,7 +54,6 @@ class TreatmentRequestForm(forms.ModelForm):
             'id_number': 'رقم الإثبات',
             'birth_date': 'تاريخ الميلاد',
             'nationality': 'الجنسية',
-            'city': 'المدينة',
             'service_type': 'نوع الخدمة المطلوبة',
             'notes': 'ملاحظات إضافية',
         }
@@ -68,13 +63,11 @@ class TreatmentRequestForm(forms.ModelForm):
             'id_number': {'required': 'رقم الإثبات مطلوب'},
             'birth_date': {'required': 'تاريخ الميلاد مطلوب'},
             'nationality': {'required': 'الجنسية مطلوبة'},
-            'city': {'required': 'المدينة مطلوبة'},
             'service_type': {'required': 'نوع الخدمة مطلوب'},
         }
 
     def clean_phone(self):
         phone = self.cleaned_data.get('phone', '').strip()
-        # Remove leading 0 if user added it
         if phone.startswith('0'):
             phone = phone[1:]
         pattern = re.compile(r'^5\d{8}$')
