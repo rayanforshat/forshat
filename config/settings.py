@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-(ooq16y_84h-e655%(@)%_u=rhr!+(&efd&r3m$%ph=vbu*4@9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]  # لاحقًا تقدر تحط دومين Railway فقط
+ALLOWED_HOSTS = ["*"]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.furshaat.com',
+    'https://furshaat.com',
+]
 
 
 # Application definition
