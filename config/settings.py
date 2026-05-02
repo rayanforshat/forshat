@@ -38,7 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'forms_app',
 ]
+
+# ---- مبادرة العلاج: إعدادات الإرسال للمشروع المستلم ----
+# ضع رابط نقطة الاستلام في المشروع الآخر وتوكن الأمان
+INITIATIVE_API_URL = ''    # مثال: 'https://your-receiver.com/api/treatment-requests/'
+INITIATIVE_API_TOKEN = ''  # نفس التوكن في المشروع المستلم
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

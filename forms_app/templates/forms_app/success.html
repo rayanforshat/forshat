@@ -1,0 +1,31 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}تم التسجيل بنجاح - مبادرة العلاج{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'forms_app/css/initiative.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="success-section">
+    <div class="container">
+        <div class="success-card">
+            <div class="success-icon">✅</div>
+            <h1 class="success-title">تم استلام طلبك بنجاح!</h1>
+            <p class="success-message">
+                شكراً لتسجيلك في <strong>مبادرة العلاج بدون المقابل المالي</strong>.<br>
+                سيتم مراجعة طلبك والتواصل معك على رقم الجوال المُسجّل خلال <strong>3 – 5 أيام عمل</strong>.
+            </p>
+            <div class="success-note">
+                <span>📞</span>
+                <p>إذا لم يتم التواصل معك خلال المدة المحددة يمكنك التواصل معنا عبر واتساب</p>
+            </div>
+            <div class="success-actions">
+                <a href="{% url 'website:home' %}" class="btn-home">العودة للرئيسية</a>
+                <a href="{% url 'forms_app:initiative' %}" class="btn-new-request">تسجيل طلب آخر</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

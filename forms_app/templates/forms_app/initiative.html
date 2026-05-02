@@ -1,0 +1,282 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}مبادرة العلاج بدون مقابل مالي - الفرشاة كلينك{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/initiative.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="initiative-hero">
+    <div class="container">
+        <div class="hero-badge">🦷 مبادرة إنسانية</div>
+        <h1 class="hero-title">مبادرة العلاج بدون المقابل المالي</h1>
+        <p class="hero-subtitle">
+            مبادرة أطلقها <strong>الدكتور مهند الجهني</strong>، تتم عن طريق كوكبة من أطباء الأسنان السعوديين
+            بهدف تقديم العلاج مجاناً لمن يحتاجون
+        </p>
+    </div>
+</section>
+
+<!-- Info Cards -->
+<section class="initiative-info">
+    <div class="container">
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">🏥</div>
+                <h3>خدماتنا</h3>
+                <p>خلع الأسنان، سحب العصب، والجراحة السنية</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🤲</div>
+                <h3>مجاناً تماماً</h3>
+                <p>لا رسوم ولا مقابل مالي من أي نوع</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">👨‍⚕️</div>
+                <h3>أطباء سعوديون</h3>
+                <p>نخبة من أطباء الأسنان السعوديين المتخصصين</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Form Section -->
+<section class="form-section">
+    <div class="container">
+        <div class="form-wrapper">
+
+            <div class="form-header">
+                <h2>سجّل طلبك الآن</h2>
+                <p>يرجى تعبئة جميع الحقول المطلوبة بدقة</p>
+            </div>
+
+            {% if form.errors %}
+            <div class="alert alert-error">
+                <span class="alert-icon">⚠️</span>
+                <div>
+                    <strong>يرجى تصحيح الأخطاء التالية:</strong>
+                    <ul class="error-list">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li>{{ field.label }}: {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+
+            <form method="POST" class="initiative-form" novalidate>
+                {% csrf_token %}
+
+                <!-- Row 1: Name & Phone -->
+                <div class="form-row two-cols">
+                    <div class="form-group">
+                        <label for="{{ form.full_name.id_for_label }}" class="form-label">
+                            {{ form.full_name.label }}
+                            <span class="required-star">*</span>
+                        </label>
+                        {{ form.full_name }}
+                        {% if form.full_name.errors %}
+                            <span class="field-error">{{ form.full_name.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.phone.id_for_label }}" class="form-label">
+                            {{ form.phone.label }}
+                            <span class="required-star">*</span>
+                        </label>
+                        <div class="phone-wrapper">
+                            <span class="phone-prefix">+966</span>
+                            {{ form.phone }}
+                        </div>
+                        {% if form.phone.errors %}
+                            <span class="field-error">{{ form.phone.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Row 2: ID & Birth Date -->
+                <div class="form-row two-cols">
+                    <div class="form-group">
+                        <label for="{{ form.id_number.id_for_label }}" class="form-label">
+                            {{ form.id_number.label }}
+                            <span class="required-star">*</span>
+                        </label>
+                        {{ form.id_number }}
+                        {% if form.id_number.errors %}
+                            <span class="field-error">{{ form.id_number.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.birth_date.id_for_label }}" class="form-label">
+                            {{ form.birth_date.label }}
+                            <span class="required-star">*</span>
+                        </label>
+                        {{ form.birth_date }}
+                        {% if form.birth_date.errors %}
+                            <span class="field-error">{{ form.birth_date.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Row 3: Nationality & City -->
+                <div class="form-row two-cols">
+                    <div class="form-group">
+                        <label for="{{ form.nationality.id_for_label }}" class="form-label">
+                            {{ form.nationality.label }}
+                            <span class="required-star">*</span>
+                        </label>
+                        {{ form.nationality }}
+                        {% if form.nationality.errors %}
+                            <span class="field-error">{{ form.nationality.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.city.id_for_label }}" class="form-label">
+                            {{ form.city.label }}
+                            <span class="required-star">*</span>
+                        </label>
+                        {{ form.city }}
+                        {% if form.city.errors %}
+                            <span class="field-error">{{ form.city.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Row 4: Service Type -->
+                <div class="form-row one-col">
+                    <div class="form-group">
+                        <label for="{{ form.service_type.id_for_label }}" class="form-label">
+                            {{ form.service_type.label }}
+                            <span class="required-star">*</span>
+                        </label>
+                        <div class="service-options">
+                            {% for value, label in form.fields.service_type.choices %}
+                                {% if value %}
+                                <label class="service-option-label">
+                                    <input type="radio" name="service_type" value="{{ value }}"
+                                        {% if form.service_type.value == value %}checked{% endif %}>
+                                    <span class="service-option-box">
+                                        {% if value == 'خلع' %}🦷{% elif value == 'سحب عصب' %}💉{% else %}🏥{% endif %}
+                                        {{ label }}
+                                    </span>
+                                </label>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% if form.service_type.errors %}
+                            <span class="field-error">{{ form.service_type.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Row 5: Notes -->
+                <div class="form-row one-col">
+                    <div class="form-group">
+                        <label for="{{ form.notes.id_for_label }}" class="form-label">
+                            {{ form.notes.label }}
+                            <span class="optional-tag">اختياري</span>
+                        </label>
+                        {{ form.notes }}
+                    </div>
+                </div>
+
+                <!-- Privacy Policy -->
+                <div class="privacy-section">
+                    <label class="privacy-label">
+                        <input type="checkbox" name="privacy_policy" id="id_privacy_policy" class="privacy-checkbox">
+                        <span class="privacy-text">
+                            بإرسال هذا النموذج أوافق على
+                            <button type="button" class="policy-link" onclick="openModal('privacyModal')">سياسة الخصوصية</button>
+                            و
+                            <button type="button" class="policy-link" onclick="openModal('initiativeModal')">سياسة المبادرة</button>
+                        </span>
+                    </label>
+                    {% if form.privacy_policy.errors %}
+                        <span class="field-error block-error">{{ form.privacy_policy.errors.0 }}</span>
+                    {% endif %}
+                </div>
+
+                <!-- Submit -->
+                <div class="form-submit">
+                    <button type="submit" class="btn-submit">
+                        <span>إرسال الطلب</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                    <p class="submit-note">سيتم التواصل معك خلال 3-5 أيام عمل</p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" class="modal-overlay" onclick="closeModalOutside(event, 'privacyModal')">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('privacyModal')">✕</button>
+        <h2 class="modal-title">🔒 سياسة الخصوصية</h2>
+        <div class="modal-content">
+            <p>نحن في مبادرة العلاج بدون مقابل مالي نلتزم بحماية خصوصيتك وبياناتك الشخصية وفق الضوابط التالية:</p>
+            <ul>
+                <li>تُستخدم البيانات المُدخلة <strong>حصراً</strong> لأغراض المبادرة العلاجية</li>
+                <li>لن تُشارَك معلوماتك مع أي جهة تجارية خارجية</li>
+                <li>يحق لك طلب حذف بياناتك في أي وقت عبر التواصل معنا</li>
+                <li>تُحفظ البيانات بصورة آمنة ومشفرة</li>
+                <li>رقم الجوال ورقم الإثبات يُستخدمان فقط للتحقق من الهوية والتواصل</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Initiative Policy Modal -->
+<div id="initiativeModal" class="modal-overlay" onclick="closeModalOutside(event, 'initiativeModal')">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('initiativeModal')">✕</button>
+        <h2 class="modal-title">📋 سياسة المبادرة</h2>
+        <div class="modal-content">
+            <p>مبادرة العلاج بدون المقابل المالي هي مبادرة إنسانية أسّسها <strong>الدكتور مهند الجهني</strong> وتتم بالشراكة مع نخبة من أطباء الأسنان السعوديين. فيما يلي شروط وأحكام الاستفادة من المبادرة:</p>
+            <ul>
+                <li>المبادرة مخصصة لمن لا يملكون القدرة المالية للعلاج</li>
+                <li>الأولوية للحالات الأشد احتياجاً بناءً على التقييم الطبي</li>
+                <li>الخدمات المتاحة: الخلع، سحب العصب، والجراحة السنية فقط</li>
+                <li>يتم التواصل مع المتقدمين المقبولين خلال 3 إلى 5 أيام عمل</li>
+                <li>يحق للمبادرة رفض الطلبات التي لا تستوفي شروط الاستحقاق</li>
+                <li>المبادرة لا تتحمل أي نفقات خارج نطاق الخدمات المحددة</li>
+                <li>يجب تقديم وثيقة إثبات هوية سارية عند الحضور للعلاج</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function openModal(id) {
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = '';
+}
+function closeModalOutside(event, id) {
+    if (event.target.id === id) closeModal(id);
+}
+</script>
+{% endblock %}
