@@ -50,8 +50,8 @@ INSTALLED_APPS = [
 
 # ---- مبادرة العلاج: إعدادات الإرسال للمشروع المستلم ----
 # ضع رابط نقطة الاستلام في المشروع الآخر وتوكن الأمان
-INITIATIVE_API_URL = ''    # مثال: 'https://your-receiver.com/api/treatment-requests/'
-INITIATIVE_API_TOKEN = ''  # نفس التوكن في المشروع المستلم
+INITIATIVE_API_URL   = 'http://127.0.0.1:8001/initiative/api/treatment-requests/'
+INITIATIVE_API_TOKEN = 'fsht-meeda-initiative-x7k2p9qw'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
