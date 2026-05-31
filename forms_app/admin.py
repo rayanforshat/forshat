@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TreatmentRequest
+from .models import TreatmentRequest, WebAppointment
 
 
 @admin.register(TreatmentRequest)
@@ -27,3 +27,16 @@ class TreatmentRequestAdmin(admin.ModelAdmin):
             'classes': ('collapse',),
         }),
     )
+
+
+@admin.register(WebAppointment)
+class WebAppointmentAdmin(admin.ModelAdmin):
+    list_display = (
+        'full_name', 'phone', 'department', 'doctor_name',
+        'appointment_date', 'appointment_time', 'is_sent', 'created_at',
+    )
+    list_filter = ('is_sent', 'department', 'appointment_date')
+    search_fields = ('full_name', 'phone', 'doctor_name')
+    readonly_fields = ('created_at', 'is_sent')
+    ordering = ('-created_at',)
+    date_hierarchy = 'appointment_date'
