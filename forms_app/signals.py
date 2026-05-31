@@ -77,18 +77,20 @@ def _push_appointment_to_meeda(instance_pk):
         with conn.cursor() as cursor:
             cursor.execute("""
                 INSERT INTO initiative_webappointment
-                    (full_name, phone, department, doctor_id,
+                    (full_name, phone, department, doctor_id, doctor_name_cached,
                      appointment_day, appointment_date, appointment_time,
                      notes, status, created_at)
                 VALUES
-                    (%s, %s, %s, %s,
+                    (%s, %s, %s, %s, %s,
                      %s, %s, %s,
                      %s, 'pending', NOW())
+                ON CONFLICT DO NOTHING
             """, [
                 obj.full_name,
                 obj.phone,
                 obj.department,
                 obj.doctor_id,
+                obj.doctor_name,
                 obj.appointment_day,
                 obj.appointment_date,
                 obj.appointment_time,
