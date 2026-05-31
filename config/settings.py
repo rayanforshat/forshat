@@ -91,11 +91,17 @@ DATABASES = {
     'default': dj_database_url.parse(
         os.environ.get(
             'DATABASE_URL',
-            # PUBLIC URL للتشغيل المحلي - INTERNAL URL على Railway تلقائياً
             'postgresql://postgres:pXGNAcJjhWBfnDbpKUJTAicTRrJZDiLc@tramway.proxy.rlwy.net:57888/railway'
         ),
         conn_max_age=600,
-    )
+    ),
+    'meeda': dj_database_url.parse(
+        os.environ.get(
+            'MEEDA_DATABASE_URL',
+            'postgresql://postgres:jWXQBHoCZtnkKJWMZeLYknConWTyPUFG@interchange.proxy.rlwy.net:14888/railway'
+        ),
+        conn_max_age=600,
+    ),
 }
 
 
@@ -135,4 +141,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "website" / "static"]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# meedaproject API base URL — set MEEDA_API_URL in Railway environment variables
+MEEDA_API_URL = os.environ.get('MEEDA_API_URL', 'https://www.forshaat.com')
