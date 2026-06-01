@@ -99,3 +99,29 @@ def submit_booking(request):
 
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=400)
+
+
+@require_POST
+def check_phone(request):
+    """
+    Check if a phone number exists in meeda's patients table.
+    Returns {exists: true/false}.
+    """
+    try:
+        data = json.loads(request.body)
+        phone = data.get('phone', '').strip()
+        if not phone:
+            return JsonResponse({'exists': False})
+
+        from django.db import connections
+        conn = connections['meeda']
+        with conn.cursor() as cursor:
+            cursor.execute(
+                "SELECT 1 FROM patients_patient WHERE mobile = %s LIMIT 1",
+                [phone]
+            )
+            row = cursor.fetchone()
+        return JsonResponse({'exists': bool(row)})
+    except Exception:
+        # If meeda DB is unreachable, allow booking to proceed
+        return JsonResponse({'exists': False})
