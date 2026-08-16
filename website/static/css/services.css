@@ -409,6 +409,9 @@ ul {
     font-size: 13px;
     font-weight: 600;
     white-space: nowrap;
+    background-color: rgba(120, 120, 120, 0.08);
+    color: var(--text-gray, #666);
+    border: 2px solid rgba(120, 120, 120, 0.15);
 }
 
 .category-badge.dental {
@@ -883,4 +886,22 @@ ul {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 900;
+}
+/* ===== تصنيفات وعروض ديناميكية (مسحوبة من نظام ميدا) ===== */
+.category-badge.derma       { background-color: rgba(155, 89, 182, .10); color: #8e44ad; border-color: rgba(155,89,182,.2); }
+.category-badge.laser-men   { background-color: rgba(41, 128, 185, .10); color: #2471a3; border-color: rgba(41,128,185,.2); }
+.category-badge.laser-women { background-color: rgba(233, 30, 99, .10);  color: #c2185b; border-color: rgba(233,30,99,.2); }
+.category-badge.skin        { background-color: rgba(26, 188, 156, .10); color: #148f77; border-color: rgba(26,188,156,.2); }
+.category-badge.glow        { background-color: rgba(52, 152, 219, .10); color: #2980b9; border-color: rgba(52,152,219,.2); }
+.category-badge.botox       { background-color: rgba(230, 126, 34, .10); color: #ca6f1e; border-color: rgba(230,126,34,.2); }
+.category-badge.filler      { background-color: rgba(22, 160, 133, .10); color: #117a65; border-color: rgba(22,160,133,.2); }
+.category-badge.dermapen    { background-color: rgba(142, 68, 173, .10); color: #7d3c98; border-color: rgba(142,68,173,.2); }
+
+/* السعر السابق (قبل الخصم) */
+.price-old {
+    display: block;
+    font-size: 12px;
+    color: var(--text-gray, #999);
+    text-decoration: line-through;
+    margin-top: 3px;
 }
